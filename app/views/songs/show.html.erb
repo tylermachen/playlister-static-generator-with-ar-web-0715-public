@@ -5,7 +5,7 @@
   <title><%= song.name %></title>
 </head>
 <body>
-    <a href="<%= @rendered_path %>/<%= @song.artist.to_slug %>.html"><%= @song.artist.name %></a>
-    <a href="<%= @rendered_path %>/<%= @song.genre.to_slug %>.html"><%= @song.genre.name %></a>
+    <a href="../artists/<%= @song.artist.to_slug %>.html"><%= @song.artist.name %></a>
+    <a href="../genres/<%= @song.genre.to_slug %>.html"><%= @song.genre.name %></a>
 </body>
 </html>

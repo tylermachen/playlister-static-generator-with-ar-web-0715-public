@@ -6,7 +6,7 @@
 </head>
 <body>
   <% Artist.all.each do |artist| %>
-    <a href="<%= @rendered_path %>/artists/show.html.erb"><%= artist.name %></a>
+    <a href="<%= artist.to_slug %>.html"><%= artist.name %></a>
   <% end %>
 </body>
 </html>

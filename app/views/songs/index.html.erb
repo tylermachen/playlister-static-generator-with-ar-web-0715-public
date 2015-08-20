@@ -6,7 +6,7 @@
 </head>
 <body>
   <% Song.all.each do |song| %>
-    <a href="<%= @rendered_path %>/songs/show.html.erb"><%= song.name %></a>
+    <a href="<%= song.to_slug %>.html"><%= song.name %></a>
   <% end %>
 </body>
 </html>

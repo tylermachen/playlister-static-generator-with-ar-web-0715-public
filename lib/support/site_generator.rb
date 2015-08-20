@@ -6,13 +6,8 @@ class SiteGenerator
   end
 
   def generate
-    build_index
-    build_artists_index
-    build_artist_page
-    build_genres_index
-    build_genre_page
-    build_songs_index
-    build_song_page
+    build_index; build_artists_index; build_artist_page; build_genres_index
+    build_genre_page; build_songs_index; build_song_page
   end
 
   def build_index

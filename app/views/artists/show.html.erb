@@ -6,11 +6,11 @@
 </head>
 <body>
   <% @artist.genres.each do |genre| %>
-    <a href="<%= @rendered_path %>/<%= genre.to_slug %>.html"><%= genre.name %></a>
+    <a href="../genres/<%= genre.to_slug %>.html"><%= genre.name %></a>
   <% end %>
 
   <% @artist.songs.each do |song| %>
-    <a href="<%= @rendered_path %>/<%= song.to_slug %>.html"><%= song.name %></a>
+    <a href="../songs/<%= song.to_slug %>.html"><%= song.name %></a>
   <% end %>
 </body>
 </html>

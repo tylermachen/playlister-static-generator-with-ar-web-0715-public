@@ -6,7 +6,7 @@
 </head>
 <body>
   <% Genre.all.each do |genre| %>
-    <a href="<%= @rendered_path %>/genres/show.html.erb"><%= genre.name %></a>
+    <a href="<%= genre.to_slug %>.html"><%= genre.name %></a>
   <% end %>
 </body>
 </html>
