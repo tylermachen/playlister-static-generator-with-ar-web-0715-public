@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Song Index</title>
+  <title>Songs</title>
 </head>
 <body>
-
+  <% Song.all.each do |song| %>
+    <a href="<%= @rendered_path %>/songs/show.html.erb"><%= song.name %></a>
+  <% end %>
 </body>
 </html>

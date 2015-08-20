@@ -2,9 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Genres</title>
+  <title><%= genre.name %></title>
 </head>
 <body>
+  <% @genre.artists.each do |artist| %>
+    <a href="<%= @rendered_path %>/<%= artist.to_slug %>.html"><%= artist.name %></a>
+  <% end %>
 
+  <% @genre.songs.each do |song| %>
+    <a href="<%= @rendered_path %>/<%= song.to_slug %>.html"><%= song.name %></a>
+  <% end %>
 </body>
 </html>

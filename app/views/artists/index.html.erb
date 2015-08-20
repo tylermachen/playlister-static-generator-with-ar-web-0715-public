@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Artist Index</title>
+  <title>Artists</title>
 </head>
 <body>
-
+  <% Artist.all.each do |artist| %>
+    <a href="<%= @rendered_path %>/artists/show.html.erb"><%= artist.name %></a>
+  <% end %>
 </body>
 </html>

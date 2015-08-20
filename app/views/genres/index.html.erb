@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Genre Index</title>
+  <title>Genres</title>
 </head>
 <body>
-
+  <% Genre.all.each do |genre| %>
+    <a href="<%= @rendered_path %>/genres/show.html.erb"><%= genre.name %></a>
+  <% end %>
 </body>
 </html>
