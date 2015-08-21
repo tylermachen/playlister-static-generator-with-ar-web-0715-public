@@ -3,6 +3,6 @@ class Genre < ActiveRecord::Base
   has_many :artists, through: :songs
 
   def to_slug
-    self.name.downcase.split.join("-")
+    name.downcase.split.join("-")
   end
 end

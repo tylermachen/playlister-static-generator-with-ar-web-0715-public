@@ -3,6 +3,6 @@ class Song < ActiveRecord::Base
   belongs_to :genre
 
   def to_slug
-    self.name.downcase.split.join("-")
+    name.downcase.split.join("-")
   end
 end
