@@ -1,8 +1,5 @@
 class Song < ActiveRecord::Base
+  include Slugifiable
   belongs_to :artist
   belongs_to :genre
-
-  def to_slug
-    name.downcase.split.join("-")
-  end
 end
