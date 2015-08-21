@@ -3,6 +3,10 @@ class SiteGenerator
 
   def initialize(url)
     @rendered_path = url
+    FileUtils.mkdir_p(url)
+    FileUtils.mkdir_p("#{url}/artists")
+    FileUtils.mkdir_p("#{url}/genres")
+    FileUtils.mkdir_p("#{url}/songs")
   end
 
   def generate
@@ -11,8 +15,10 @@ class SiteGenerator
   end
 
   def build_index
+    @artists = Artist.all
+    @genres = Genre.all
+    @songs = Song.all
     t = File.read("app/views/index.html.erb")
-    FileUtils::mkdir_p "#{rendered_path}"
     File.open("#{@rendered_path}/index.html", "w+") do |f|
       f.puts ERB.new(t).result(binding)
     end
@@ -20,7 +26,6 @@ class SiteGenerator
 
   def build_artists_index
     t = File.read("app/views/artists/index.html.erb")
-    FileUtils::mkdir_p "#{rendered_path}/artists" # create directories
     File.open("#{@rendered_path}/artists/index.html", "w+") do |f|
       f.puts ERB.new(t).result(binding)
     end
@@ -38,7 +43,6 @@ class SiteGenerator
 
   def build_genres_index
     t = File.read("app/views/genres/index.html.erb")
-    FileUtils::mkdir_p "#{rendered_path}/genres" # create directories
     File.open("#{@rendered_path}/genres/index.html", "w+") do |f|
       f.puts ERB.new(t).result(binding)
     end
@@ -56,7 +60,6 @@ class SiteGenerator
 
   def build_songs_index
     t = File.read("app/views/songs/index.html.erb")
-    FileUtils::mkdir_p "#{rendered_path}/songs" # create directories
     File.open("#{@rendered_path}/songs/index.html", "w+") do |f|
       f.puts ERB.new(t).result(binding)
     end
